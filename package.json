@@ -1,0 +1,32 @@
+{
+  "name": "api-covid-ufrgs",
+  "version": "1.0.0",
+  "description": "API to return important and updated data about covid-19 in RS",
+  "main": "index.js",
+  "scripts": {
+    "heroku-postbuild": "  npm run install-server",
+    "start": "node ./src/app.js",
+    "install-server": "rm -rf node_modules && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/nodemon/bin/nodemon.js ./src/app.js"
+  },
+  "engines": {"node": ">= 9.0.0"},
+  "keywords": [
+    "covid",
+    "api",
+    "ufrgs"
+  ],
+  "author": "Matheus",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "sequelize": "^5.21.5",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
