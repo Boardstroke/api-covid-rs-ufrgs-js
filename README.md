@@ -26,40 +26,37 @@
 
   3. Trabalhar com os dados:
 
-    Response é um array onde cada elemento é um dicionário municipio. Esse dicionário tem as seguintes keys:
+  Response é um array onde cada elemento é um dicionário municipio. Esse dicionário tem as seguintes keys:
 
-      * nome -> String: contendo o nome da cidade
-      * pop_senso_2010 -> Inteiro: População medida pelo senso 2010
-      * pop_est_2019 -> Inteiro: População estimada da cidade 2019
-      * Location -> Dicionário: Latitude Longitude da cidade
-      * Distancia -> Array: Com a lista das 166 cidades com mais de 10 mil habitantes com a distância rodoviária, em metros.
+  * nome -> String: contendo o nome da cidade
+  * pop_senso_2010 -> Inteiro: População medida pelo senso 2010
+  * pop_est_2019 -> Inteiro: População estimada da cidade 2019
+  * Location -> Dicionário: Latitude Longitude da cidade
+  * Distancia -> Array: Com a lista das 166 cidades com mais de 10 mil habitantes com a distância rodoviária, em metros.
 
-    # Exemplo: <h4>
+  # Exemplo: <h4>
 
-    ```python
-      response[0]["nome"] # output -> Porto Alegre, RS, Brazil
-      response[0]["pop_senso_2010"] # output -> 1450555
-      response[0]["Location"]
-      # {
-        # 'id': 1,
-        # 'lat': -30.0346471,
-        # 'lng': -51.2176584,
-        # 'createdAt': '2020-04-03T05:05:03.526Z',
-        # 'updatedAt': '2020-04-03T05:05:03.526Z',
-        # 'MunicipioId': 1
-      # }
-      response[0]["Distancia"] [0]
-      # output ->{
-      # {'id': 116,
-      # 'dest': 'Agudo, RS, Brazil',
-      # 'dist': 243244,
-      # 'createdAt': '2020-04-03T05:54:19.409Z',
-      # 'updatedAt': '2020-04-03T05:54:19.409Z',
-      # 'MunicipioId': 1}
-      # }
-
-
-
+  ```python
+    response[0]["nome"] # output -> Porto Alegre, RS, Brazil
+    response[0]["pop_senso_2010"] # output -> 1450555
+    response[0]["Location"]
+    # {
+      # 'id': 1,
+      # 'lat': -30.0346471,
+      # 'lng': -51.2176584,
+      # 'createdAt': '2020-04-03T05:05:03.526Z',
+      # 'updatedAt': '2020-04-03T05:05:03.526Z',
+      # 'MunicipioId': 1
+    # }
+    response[0]["Distancia"] [0]
+    # output ->{
+    # {'id': 116,
+    # 'dest': 'Agudo, RS, Brazil',
+    # 'dist': 243244,
+    # 'createdAt': '2020-04-03T05:54:19.409Z',
+    # 'updatedAt': '2020-04-03T05:54:19.409Z',
+    # 'MunicipioId': 1}
+    # }
     ```
 
 # A fazer<h2>
