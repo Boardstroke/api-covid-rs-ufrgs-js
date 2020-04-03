@@ -4,7 +4,7 @@
 
 # Uso no python 🐍 <h2>
 
-  Com o objetivo de ser fácil de manipular para uso junto ao jupyter, uma simples instrução de como obter os principais dados da API usando a biblioteca `requests`
+  Com o objetivo de ser fácil de manipular para uso junto ao jupyter, uma simples instrução de como obter os principais dados da API usando a biblioteca requests
 
   1. Instalar a biblioteca requests:
 
