@@ -32,7 +32,7 @@
   * pop_senso_2010 -> Inteiro: População medida pelo senso 2010
   * pop_est_2019 -> Inteiro: População estimada da cidade 2019
   * Location -> Dicionário: Latitude Longitude da cidade
-  * Distancia -> Array: Com a lista das 166 cidades com mais de 10 mil habitantes com a distância rodoviária, em metros.
+  * Distancias -> Array: Com a lista das 166 cidades com mais de 10 mil habitantes com a distância rodoviária, em metros.
 
   # Exemplo: <h4>
 
@@ -66,5 +66,6 @@
   * [❌] Adicionar os dados dos números de infectados nas cidades
   * [❌] Melhorar a estrutura dos dados do array Distancia
   * [❌] Criar protocolos de segurança para que usuário posso add mudanças ou remover, quando necessário, aos dados na API
+  * [❌] Determinar quais dados são essencias e criar protocolos de buscas para otimizar as requisões
 
   E outras sugestões são sempre bem-vindas 😃
