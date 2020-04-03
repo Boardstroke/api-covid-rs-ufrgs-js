@@ -18,7 +18,7 @@
 
     import requests
 
-    response = requests.get("https://api-covid-ufrgs.herokuapp.com/municipios/index").json()
+    municipios = requests.get("https://api-covid-ufrgs.herokuapp.com/municipios/index").json()
 
   ```
 
@@ -48,7 +48,7 @@
       # 'updatedAt': '2020-04-03T05:05:03.526Z',
       # 'MunicipioId': 1
     # }
-    response[0]["Distancia"] [0]
+    response[0]["Distancias"][0]
     # output ->{
     # {'id': 116,
     # 'dest': 'Agudo, RS, Brazil',
