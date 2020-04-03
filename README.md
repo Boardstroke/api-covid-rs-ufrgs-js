@@ -8,23 +8,25 @@
 
   1. Instalar a biblioteca requests:
 
-    Requests é uma biblioteca compressível de protocolos HTTP, sua documentação pode ser encontrada [Documentação](https://requests.readthedocs.io/en/master/). Para instalar rode no seu terminal o comando `pip install requests`
+    ...Requests é uma biblioteca compressível de protocolos HTTP, sua documentação pode ser encontrada [Documentação](https://requests.readthedocs.io/en/master/). Para instalar rode no seu terminal o comando `pip install requests`
 
   2. GET:
 
-    Para obter a lista de informações obtidas até agora pela API através do python os seguintes comandos:
+    ...Para obter a lista de informações obtidas até agora pela API através do python os seguintes comandos:
 
     ```python
+
       import requests
 
       response = requests.get("https://api-covid-ufrgs.herokuapp.com/municipios/index").json()
+
     ```
 
-    O formato do response no momento é um array de dicionários:
+    ...O formato do response no momento é um array de dicionários:
 
   3. Trabalhar com os dados:
 
-    Response é um array onde cada elemento é um dicionário municipio. Esse dicionário tem as seguintes keys:
+    ...Response é um array onde cada elemento é um dicionário municipio. Esse dicionário tem as seguintes keys:
 
       * nome -> String: contendo o nome da cidade
       * pop_senso_2010 -> Inteiro: População medida pelo senso 2010
@@ -62,8 +64,10 @@
 
 # A fazer<h2>
 
-  Existe uma varidade de coisas a serem feitas, devido ao curto tempo não consegui melhorar, ou ter tempo pra pensar na maneira optimal para estrutura dos dados ou em implementar mais funcionalidades. Uma lista de coisas a serem melhoradas a longo prazo
+  ...Existe uma varidade de coisas a serem feitas, devido ao curto tempo não consegui melhorar, ou ter tempo pra pensar na maneira optimal para estrutura dos dados ou em implementar mais funcionalidades. Uma lista de coisas a serem melhoradas a longo prazo
 
   * [❌] Adicionar os dados dos números de infectados nas cidades
   * [❌] Melhorar a estrutura dos dados do array Distancia
   * [❌] Criar protocolos de segurança para que usuário posso add mudanças ou remover, quando necessário, aos dados na API
+
+  E outras sugestões são sempre bem-vindas 😃
