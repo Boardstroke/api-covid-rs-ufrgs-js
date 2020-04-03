@@ -1,6 +1,6 @@
 # API COVID-19 RS 😷 <h1>
 
-  API para centralizar as principais e mais atualizadas informações sobre a covid-19 no estado do RS, respondendo requisões com arquivos json compativel com várias linguangens diferentes
+  API para centralizar as principais e mais atualizadas informações sobre a covid-19 no estado do RS, respondendo requisões com arquivos json compativel com várias linguangens, python, julia, R
 
 # Uso no python 🐍 <h2>
 
