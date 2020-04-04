@@ -10,7 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./node_modules/nodemon/bin/nodemon.js ./src/app.js"
   },
-  "engines": {"node": ">= 9.0.0"},
+  "engines": {
+    "node": ">= 9.0.0"
+  },
   "keywords": [
     "covid",
     "api",
@@ -23,6 +25,9 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
+    "pg": "^8.0.0",
+    "pg-hstore": "^2.3.3",
+    "pg-native": "^3.0.0",
     "sequelize": "^5.21.5",
     "sqlite3": "^4.1.1"
   },
