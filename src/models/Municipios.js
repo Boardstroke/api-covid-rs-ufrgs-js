@@ -8,6 +8,7 @@ module.exports = (sequelize, DataType) => {
   Municipios.associate = function(models) {
     models.Municipios.hasOne(models.Location);
     models.Municipios.hasMany(models.Distancias);
+    models.Municipios.hasMany(models.Infectados);
   };
   return Municipios;
 };

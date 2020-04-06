@@ -1,11 +1,11 @@
-const {Municipios, Location, Distancias} = require('../models');
+const {Municipios, Location, Distancias, Infectados} = require('../models');
 
 
 module.exports = {
   async index(req, res) {
     try {
       const municipios = await Municipios.findAll({
-        include: [Location, Distancias],
+        include: [Location, Distancias, Infectados],
         order: ['id']
 
         });
@@ -38,6 +38,24 @@ module.exports = {
       res.status(400).send(err);
     }
   },
+  async addInfectados(req,res){
+    try{
+      const cidade = await Municipios.findAll({
+        where: {
+          nome: req.body.cidade + ", RS, Brazil"
+        }
+      });
+      try{
+        const infectado = Infectados.create({"MunicipioId": cidade[0].dataValues.id, "numero":req.body.numero_infectados, "data": req.body.data});
+        res.send(infectados);
+      }catch(err){
+        res.status(400).send(err);
+      }
+    }catch(err){
+      res.status(400).send(err);
+    }
+  },
+
   async deleteAll(req,res){
     try{
       const deleteAll = await Municipios.Destroy({where:{

@@ -48,11 +48,11 @@
       # 'updatedAt': '2020-04-03T05:05:03.526Z',
       # 'MunicipioId': 1
     # }
-    response[0]["Distancias"][0]
+    response[0]["Distancias"][1] # distancia Porto a Alegre -> Caxias do sul
     # output ->{
-    # {'id': 116,
-    # 'dest': 'Agudo, RS, Brazil',
-    # 'dist': 243244,
+    # {'id': 2,
+    # 'dest': 'Caxias do Sul, RS, Brazil',
+    # 'dist': 123244,
     # 'createdAt': '2020-04-03T05:54:19.409Z',
     # 'updatedAt': '2020-04-03T05:54:19.409Z',
     # 'MunicipioId': 1}
@@ -63,8 +63,8 @@
 
   Existe uma varidade de coisas a serem feitas, devido ao curto tempo não consegui melhorar, ou ter tempo pra pensar na maneira optimal para estrutura dos dados ou em implementar mais funcionalidades. Uma lista de coisas a serem melhoradas a longo prazo
 
-  * [❌] Adicionar os dados dos números de infectados nas cidades
-  * [❌] Melhorar a estrutura dos dados do array Distancia
+  * [✔️] Adicionar os dados dos números de infectados nas cidades
+  * [✔️] Melhorar a estrutura dos dados do array Distancia
   * [❌] Criar protocolos de segurança para que usuário posso add mudanças ou remover, quando necessário, aos dados na API
   * [❌] Determinar quais dados são essencias e criar protocolos de buscas para otimizar as requisões
 

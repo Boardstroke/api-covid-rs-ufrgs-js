@@ -6,4 +6,5 @@ module.exports = (app) =>{
   app.post("/municipios/add", MunicipiosControllers.addMunicipio);
   app.post("/municipios/add-location", MunicipiosControllers.addLocation);
   app.post("/municipios/add-distancia", MunicipiosControllers.addDistancia);
+  app.post("/municipios/add-infectados", MunicipiosControllers.addInfectados);
 };
