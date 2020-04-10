@@ -33,20 +33,25 @@
   * pop_est_2019 -> Inteiro: População estimada da cidade 2019
   * Location -> Dicionário: Latitude Longitude da cidade
   * Distancias -> Lista: Com a lista das 166 cidades com mais de 10 mil habitantes com a distância rodoviária, em metros.
-  * Infectados -> Lista: Uma lista atualizada diariamente, com os infectados de cada cidade, número de óbitos e data em que aquela data
+  * Infectados -> Lista de dicionários: Uma lista atualizada diariamente, com os infectados de cada cidade, número de óbitos e data em que aquela data
 
   * (Em produção) Onibus -> Lista contendo as quantidade de onibus interurbanos que saem do múnicipio
 
   # Exemplo: <h4>
 
   ```python
-    mps[0]["nome"] Cidade do indice 0 -> Porto Alegre, RS, Brazil
+    mps[0]["nome"]  # Cidade do indice 0 -> Porto Alegre, RS, Brazil
   ```
   ```python
-    mps[0]["pop_senso_2010"] # output -> 1450555
+    mps[0]["pop_senso_2010"] # População de Porto Alegre em 2010 -> 1450555
   ```
   ```python
-    mps[0]["Location"]
+    mps[0]["pop_est_2019"] # População estimada de Porto Alegre em 2019 ->	1 483 771
+  ```
+
+  ```python
+    mps[0]["Location"] # Coord geográficas da cidade de Porto Alegre
+
     # {
       # 'id': 1,
       # 'lat': -30.0346471,
@@ -59,18 +64,31 @@
 
     ```python
     mps[0]["Distancias"][1] # distancia Porto a Alegre -> Caxias do sul
-    # output ->{
+
     # {'id': 2,
     # 'dest': 'Caxias do Sul, RS, Brazil',
-    # 'dist': 123244,
+    # 'dist': 128244,
     # 'createdAt': '2020-04-03T05:54:19.409Z',
     # 'updatedAt': '2020-04-03T05:54:19.409Z',
     # 'MunicipioId': 1}
     # }
   ```
 
+  ```python
+    mps[0]["Infectados"][-1] # Valor mais recente de pessoas infectadas em Porto Alegre
 
-  Existe uma varidade de coisas a serem feitas, devido ao curto tempo não consegui melhorar, ou ter tempo pra pensar na maneira optimal para estrutura dos dados ou em implementar mais funcionalidades. Uma lista de coisas a serem melhoradas a longo prazo
+    # "id": 355,
+    # "numero_infectados": 303,
+    # "numero_obitos": 6,
+    # "data": "2020-04-09",
+    # "createdAt": "2020-04-10T02:15:08.163Z",
+    # "updatedAt": "2020-04-10T02:15:08.163Z",
+    # "MunicipioId": 1
+
+  ```
+
+
+  Existe uma varidade de coisas a serem feitas, devido ao curto tempo não consegui melhorar, ou ter tempo pra pensar na maneira otima para estrutura dos dados ou em implementar mais funcionalidades. Uma lista de coisas a serem melhoradas a longo prazo
 
   * [✔️] Adicionar os dados dos números de infectados nas cidades
   * [✔️] Melhorar a estrutura dos dados do lista Distancia
