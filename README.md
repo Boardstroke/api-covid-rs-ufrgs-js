@@ -67,7 +67,7 @@
 
     # {'id': 2,
     # 'dest': 'Caxias do Sul, RS, Brazil',
-    # 'dist': 128244,
+    # 'dist': 128183,
     # 'createdAt': '2020-04-03T05:54:19.409Z',
     # 'updatedAt': '2020-04-03T05:54:19.409Z',
     # 'MunicipioId': 1}
