@@ -39,20 +39,25 @@ module.exports = {
     }
   },
   async addInfectados(req,res){
+    const mps_nao_listados = [];
     try{
       const cidade = await Municipios.findAll({
         where: {
           nome: req.body.cidade + ", RS, Brazil"
         }
       });
+
       try{
-        const infectado = Infectados.create({"MunicipioId": cidade[0].dataValues.id, "numero":req.body.numero_infectados, "data": req.body.data});
-        res.send(infectados);
+        const infectado = Infectados.create({"MunicipioId": cidade[0].dataValues.id, "numero_infectados":req.body.numero_infectados, "numero_obitos":req.body.numero_obitos, "data": req.body.data});
+        res.status(200).send(infectado);
       }catch(err){
+        console.log(err);
         res.status(400).send(err);
       }
     }catch(err){
-      res.status(400).send(err);
+      console.log(err, "Cidade não encontrada");
+
+      res.status(400).send(mps_nao_listados);
     }
   },
 

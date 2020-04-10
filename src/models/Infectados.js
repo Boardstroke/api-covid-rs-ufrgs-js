@@ -1,6 +1,7 @@
 module.exports = (sequelize, DataType) => {
   const Infectados = sequelize.define("Infectados", {
-    numero: DataType.INTEGER,
+    numero_infectados: DataType.INTEGER,
+    numero_obitos: DataType.INTEGER,
     data: DataType.STRING
   });
   Infectados.associate = function(models) {

@@ -1,6 +1,6 @@
 # API COVID-19 RS 😷 <h1>
 
-  API para centralizar as principais e mais atualizadas informações sobre a covid-19 no estado do RS, respondendo requisões com arquivos json compativel com várias linguangens, python, julia, R
+  API para centralizar as principais e mais atualizadas informações sobre a covid-19 no estado do RS, respondendo requisões com arquivos json compativel com várias linguangens, Python, Julia, R
 
 # Uso no python 🐍 <h2>
 
@@ -16,30 +16,37 @@
 
   ```python
 
-    import requests
+    import requests as r
 
-    municipios = requests.get("https://api-covid-ufrgs.herokuapp.com/municipios/index").json()
+    mps = r.get("https://c1fc1897.ngrok.io/municipios/index").json()
 
   ```
 
-  O formato do response no momento é um array de dicionários:
+  O formato do response no momento é uma lista de dicionários, cada dicionário representa um municipios contendo importantes informação para a modelagem do grafo. Os indices estão ordenandos da mais populosa para a menos populosa;
 
   3. Trabalhar com os dados:
 
-  Response é um array onde cada elemento é um dicionário municipio. Esse dicionário tem as seguintes keys:
+  Response é um lista onde cada elemento é um dicionário municipio. Esse dicionário tem as seguintes keys:
 
   * nome -> String: contendo o nome da cidade
   * pop_senso_2010 -> Inteiro: População medida pelo senso 2010
   * pop_est_2019 -> Inteiro: População estimada da cidade 2019
   * Location -> Dicionário: Latitude Longitude da cidade
-  * Distancias -> Array: Com a lista das 166 cidades com mais de 10 mil habitantes com a distância rodoviária, em metros.
+  * Distancias -> Lista: Com a lista das 166 cidades com mais de 10 mil habitantes com a distância rodoviária, em metros.
+  * Infectados -> Lista: Uma lista atualizada diariamente, com os infectados de cada cidade, número de óbitos e data em que aquela data
+
+  * (Em produção) Onibus -> Lista contendo as quantidade de onibus interurbanos que saem do múnicipio
 
   # Exemplo: <h4>
 
   ```python
-    response[0]["nome"] # output -> Porto Alegre, RS, Brazil
-    response[0]["pop_senso_2010"] # output -> 1450555
-    response[0]["Location"]
+    mps[0]["nome"] Cidade do indice 0 -> Porto Alegre, RS, Brazil
+  ```
+  ```python
+    mps[0]["pop_senso_2010"] # output -> 1450555
+  ```
+  ```python
+    mps[0]["Location"]
     # {
       # 'id': 1,
       # 'lat': -30.0346471,
@@ -48,7 +55,10 @@
       # 'updatedAt': '2020-04-03T05:05:03.526Z',
       # 'MunicipioId': 1
     # }
-    response[0]["Distancias"][1] # distancia Porto a Alegre -> Caxias do sul
+    ```
+
+    ```python
+    mps[0]["Distancias"][1] # distancia Porto a Alegre -> Caxias do sul
     # output ->{
     # {'id': 2,
     # 'dest': 'Caxias do Sul, RS, Brazil',
@@ -59,12 +69,12 @@
     # }
   ```
 
-# A fazer<h2>
 
   Existe uma varidade de coisas a serem feitas, devido ao curto tempo não consegui melhorar, ou ter tempo pra pensar na maneira optimal para estrutura dos dados ou em implementar mais funcionalidades. Uma lista de coisas a serem melhoradas a longo prazo
 
   * [✔️] Adicionar os dados dos números de infectados nas cidades
-  * [✔️] Melhorar a estrutura dos dados do array Distancia
+  * [✔️] Melhorar a estrutura dos dados do lista Distancia
+  * [❌] Adicionar as linhas de onibus interurbanos entre as cidades
   * [❌] Criar protocolos de segurança para que usuário posso add mudanças ou remover, quando necessário, aos dados na API
   * [❌] Determinar quais dados são essencias e criar protocolos de buscas para otimizar as requisões
 
