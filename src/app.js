@@ -27,8 +27,12 @@ let runPython = function(){
 };
 
 app.use(cors());
-app.use(logger("dev"));
-app.use(bodyParser.json());
+app.use(logger());
+app.use(bodyParser.json({limit: '50mb', extended: true}));
+
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+
+
 
 require("./routes")(app);
 
@@ -52,3 +56,4 @@ sequelize.sync().then(() => {
 
   setInterval(isTime, 1000*60*60);
 });
+

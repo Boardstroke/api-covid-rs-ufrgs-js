@@ -1,5 +1,10 @@
 module.exports = (sequelize, DataType) => {
   const Infectados = sequelize.define("Infectados", {
+    infectados_id:{
+      type: DataType.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     numero_infectados: DataType.INTEGER,
     numero_obitos: DataType.INTEGER,
     data: DataType.STRING
@@ -9,6 +14,7 @@ module.exports = (sequelize, DataType) => {
       onDelete: "CASCADE",
       foreignKey: {
         allowNull: false,
+        name: 'mid'
       }
     });
   };

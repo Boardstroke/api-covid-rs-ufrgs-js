@@ -6,9 +6,30 @@ module.exports = (sequelize, DataType) => {
     mesoregiao: DataType.STRING,
   });
   Municipios.associate = function(models) {
-    models.Municipios.hasOne(models.Location);
-    models.Municipios.hasMany(models.Distancias);
-    models.Municipios.hasMany(models.Infectados);
+    models.Municipios.hasOne(models.Location, {
+      foreignKey: {
+        name: 'mid',
+        allowNull: false
+      }
+    });
+    models.Municipios.hasOne(models.Rodoviarias,{
+      foreignKey: {
+        name: 'mid',
+        allowNull: false
+      }
+    });
+    models.Municipios.hasMany(models.Distancias,{
+      foreignKey: {
+        name: 'mid',
+        allowNull: false
+      }
+    });
+    models.Municipios.hasMany(models.Infectados,{
+      foreignKey:{
+        name:'mid',
+        allowNull: false
+      }
+    });
   };
   return Municipios;
 };
